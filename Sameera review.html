@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Localhost Matching - Sameera Subasinghe Reviews</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+        }
+
+        .path {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .profile {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin: 20px;
+            border: 2px solid #333;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .details {
+            text-align: center;
+        }
+
+        .rating {
+            font-size: 24px;
+        }
+
+        .name {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .reviews-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .review-card {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            max-width: 300px;
+            text-align: center;
+        }
+
+        .add-review-btn {
+            padding: 15px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+         .svg-container {
+            width: 5vw;
+            height: 5vh;
+            position: absolute;
+            top: 35px;
+            left: 15px;
+            opacity: 1.0;
+            animation: pulse 1.5s ease-in-out infinite;
+            z-index: 5; /* Set a higher z-index to make sure it's on top */
+        }
+
+        .svg-container img {
+            width: 80%; /* Use 100% width to fill the container */
+            height: 80%; /* Use 100% height to fill the container */
+            display: block;
+            object-position: 100% 50%;
+            transform: translate(-50%, -50%) rotate(0deg);
+        }
+    </style>
+</head>
+<body>
+<!-- SVG container in the body -->
+    <div class="svg-container" onclick="window.location.href='Sara final.html'">
+        <img src="phootos\16de2cf5b18de6caa3c501441a8da300.svg" alt="previous arrow icon" loading="lazy">
+    </div>
+    <div class="header">
+        <div class="path">Dashboard / Localhost Matching / Sameera Subasinghe / Reviews</div>
+        <h1>Localhost Matching</h1>
+    </div>
+    
+    <div class="profile">
+        <img src="phootos\Sameera.jpg" alt="Sameera Subasinghe">
+        <div class="details">
+            <div class="rating">*****</div>
+            <div class="name">Sameera Subasinghe</div>
+        </div>
+        
+        <div class="reviews-container">
+            <!-- Review Cards -->
+            <div class="review-card">
+                <img src="phootos\Shemeera.jpg" alt="Shemeera Martin">
+                <div class="rating">***** </div>
+                <p><b>Shemeera</b></p><br>
+                <p>"So friendly and very good hosting."</p>
+            </div>
+
+            <div class="review-card">
+                <img src="phootos\Ann.jpg" alt="Ann Fernando">
+                <div class="rating">**** </div>
+                <p><b>Ann</b></p><br>
+                <p>"Highly recommend."</p>
+            </div>
+
+            <div class="review-card">
+                <img src="phootos\Robert.jpg" alt="Robert Parkinson">
+                <div class="rating">*****</div>
+                <p><b>Robert</b></p><br>
+                <p>"Very nice hosting."</p>
+            </div>
+        </div>
+
+        <button class="add-review-btn" onclick="window.location.href='Add reviews  sameera.html'">Add Your Review+</button>
+    </div>
+
+    
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cultural Awareness Blog- Cultural Awareness Blog</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        .header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .path {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .svg-container {
+            width: 5vw;
+            height: 5vh;
+            position: absolute;
+            top: 35px;
+            left: 15px;
+            opacity: 1.0;
+            animation: pulse 1.5s ease-in-out infinite;
+            z-index: 5; 
+        }
+
+        .svg-container img {
+            width: 80%; 
+            height: 80%; 
+            display: block;
+            object-position: 100% 50%;
+            transform: translate(-50%, -50%) rotate(0deg);
+        }
+
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        #addBlogForm {
+            max-width: 400px;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- SVG container in the body -->
+    <div class="svg-container" onclick="window.location.href='main page.html'">
+        <img src="phootos\16de2cf5b18de6caa3c501441a8da300.svg" alt="previous arrow icon" loading="lazy">
+    </div>
+    <div class="header">
+        <div class="path">Dashboard / Cultural Awareness Blog / Add Your Blog</div>
+        <h1>CULTURAL AWARENESS BLOG</h1>
+    </div>
+
+    <div class="wrapper">
+        
+
+        <!-- Add Your Blog Section -->
+        <div id="addBlogForm">
+            <h2>Add Your Blog</h2>
+            <form id="blogForm" onsubmit="submitBlog(event)">
+                <label for="blogLink">Blog Link:</label>
+                <input type="url" id="blogLink" name="blogLink" required>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function showBlog(blogTitle) {
+            // You can implement the logic to display the details of the selected blog.
+            // For simplicity, let's just log the selected blog title to the console.
+            console.log('Selected Blog:', blogTitle);
+        }
+
+        function submitBlog(event) {
+            // You can implement the logic to handle the form submission.
+            // For now, let's prevent the default form submission and log the entered URL.
+            event.preventDefault();
+            const blogLink = document.getElementById('blogLink').value;
+            console.log('Submitted Blog Link:', blogLink);
+            // You can add further processing logic here, such as sending the link to a server.
+        }
+    </script>
+</body>
+
+</html>

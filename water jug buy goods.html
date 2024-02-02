@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artisan Marketplace - Buy Goods</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .path {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .buy-box {
+            margin: 20px auto;
+            padding: 20px;
+            width: 50%;
+            background-color: #f2f2f2;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        .item-counter {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .counter-btn {
+            padding: 10px;
+            margin: 0 10px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .price-per-unit {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .total-bill {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .buy-now-btn {
+            padding: 10px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        .svg-container {
+            width: 5vw;
+            height: 5vh;
+            position: absolute;
+            top: 35px;
+            left: 15px;
+            opacity: 1.0;
+            animation: pulse 1.5s ease-in-out infinite;
+            z-index: 5; /* Set a higher z-index to make sure it's on top */
+        }
+
+        .svg-container img {
+            width: 80%; /* Use 100% width to fill the container */
+            height: 80%; /* Use 100% height to fill the container */
+            display: block;
+            object-position: 100% 50%;
+            transform: translate(-50%, -50%) rotate(0deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="svg-container" onclick="window.location.href='artisan marketplace Main page.html'">
+        <img src="phootos\16de2cf5b18de6caa3c501441a8da300.svg" alt="previous arrow icon" loading="lazy">
+    </div>
+    <div class="header">
+        <div class="path">Dashboard / Artisan Marketplace / Buy Goods</div>
+        <h1>ARTISAN MARKETPLACE</h1>
+    </div>
+
+    <div class="buy-box">
+        <div class="item-counter">
+            <button class="counter-btn" onclick="decrementItem()">-</button>
+            <span id="item-count">0</span>
+            <button class="counter-btn" onclick="incrementItem()">+</button>
+        </div>
+
+        <div class="price-per-unit">Price per unit: $18</div>
+        <div class="total-bill">Total bill: $0</div>
+
+        <!-- <button class="buy-now-btn" onclick="window.location.href='waterjug payment details.html'">Buy Now</button> -->
+        <button class="buy-now-btn" onclick="loadPaymentPage()">Buy Now</button>
+    </div>
+
+    <script>
+        let itemCount = 0;
+
+        function loadPaymentPage(){
+            window.location.href = 'payment_details.php?item=Handmade Water Jug from Coconut Shell' +
+             '&qty=' + itemCount + 
+             '&unit_price=15';
+        }
+
+        function incrementItem() {
+            itemCount++;
+            updateItemCounter();
+            updateTotalBill();
+        }
+
+        function decrementItem() {
+            if (itemCount > 0) {
+                itemCount--;
+                updateItemCounter();
+                updateTotalBill();
+            }
+        }
+
+        function updateItemCounter() {
+            document.getElementById('item-count').innerText = itemCount;
+        }
+
+        function updateTotalBill() {
+            const totalBill = itemCount * 18; // Assuming $18 per unit
+            document.querySelector('.total-bill').innerText = `Total bill: $
+
+${totalBill}`;
+        }
+
+        function buyNow() {
+            // Add logic for handling the "Buy Now" button click
+            alert(`Item(s) added to the cart! Total bill: $${itemCount * 18}`);
+        }
+    </script>
+</body>
+</html>

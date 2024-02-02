@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artisan Marketplace - Handmade water jug</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .path {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .detail-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 20px;
+        }
+
+        .item-image {
+            width: 50%; /* Adjust as needed */
+            margin-right: 100px;
+        }
+
+        .item-details {
+            width: 100%; /* Adjust as needed */
+        }
+
+        .item-details h2 {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .item-details p {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .buy-now-btn, .reviews-btn {
+            padding: 10px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+/* SVG styles */
+        
+        .svg-container {
+    width: 5vw;
+    height: 5vh;
+    position: absolute;
+    top: 35px;
+    left: 20px;
+    opacity: 1.0;
+    animation: pulse 1.5s ease-in-out infinite;
+    z-index: 5; /* Set a higher z-index to make sure it's on top */
+}
+
+.svg-container img {
+    width: 80%; /* Use 100% width to fill the container */
+    height: 80%; /* Use 100% height to fill the container */
+    display: block;
+    
+    object-position: 100% 50%;
+    transform: translate(-50%, -50%) rotate(0deg);
+}
+    </style>
+</head>
+<body>
+    <!-- SVG container in the body -->
+    
+   <div class="svg-container"onclick="window.location.href='artisan marketplace Main page.html'">
+ 
+   <img src="phootos/16de2cf5b18de6caa3c501441a8da300.svg" 
+   alt="previous arrow icon" loading="lazy">
+   </div>
+    <div class="header">
+        <div class="path">Dashboard / Artisan Marketplace / Handmade water jug </div>
+        <h1>ARTISAN MARKETPLACE</h1>
+    </div>
+
+    <div class="detail-container">
+        <div class="item-image">
+            <img src="phootos/waterjug.jpg" alt="Art On Coconut Shell">
+        </div>
+        <div class="item-details">
+            <h2>Handmade water jug</h2>
+            <p>Artisan: Minidu Dissanayake</p>
+            <p>Rating: ****</p>
+            <p>Material: Coconut Shell</p>
+            <p>Price: $18</p>
+            <button class="buy-now-btn" onclick="window.location.href='water jug buy goods.html'">Buy Now</button>
+            <button class="reviews-btn" onclick="window.location.href='waterjug review .html'">Reviews</button>
+        </div>
+    </div>
+
+    <script>
+        function buyNow() {
+            // Add logic for handling the "Buy Now" button click
+            alert("Item added to the cart! (This is a placeholder. Actual functionality coming soon.)");
+        }
+
+        function showReviews() {
+            // Add logic for handling the "Reviews" button click
+            alert("Show Reviews functionality coming soon!");
+        }
+    </script>
+</body>
+</html>

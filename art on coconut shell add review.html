@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artisan Marketplace- Add Review</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+        }
+
+        .path {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .add-review-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin: 20px;
+            border: 2px solid #333;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .rating-container {
+            margin-bottom: 20px;
+        }
+
+        .name-input, .comment-input {
+            width: 50%;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .comment-input {
+            height: 100px;
+        }
+
+        .submit-btn {
+            padding: 15px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+
+        }
+         /* SVG styles */
+        
+        .svg-container {
+    width: 5vw;
+    height: 5vh;
+    position: absolute;
+    top: 35px;
+    left: 20px;
+    opacity: 1.0;
+    animation: pulse 1.5s ease-in-out infinite;
+    z-index: 5; /* Set a higher z-index to make sure it's on top */
+}
+
+.svg-container img {
+    width: 80%; /* Use 100% width to fill the container */
+    height: 80%; /* Use 100% height to fill the container */
+    display: block;
+    
+    object-position: 100% 50%;
+    transform: translate(-50%, -50%) rotate(0deg);
+}
+    </style>
+</head>
+<body>
+     <!-- SVG container in the body -->
+    
+   <div class="svg-container"onclick="window.location.href='art on coconut shell reviews.html'">
+ 
+   <img src="phootos\16de2cf5b18de6caa3c501441a8da300.svg" 
+   alt="previous arrow icon" loading="lazy">
+   
+   </div>
+    <div class="header">
+        <div class="path">Dashboard /Artisan Marketplace / Art on coconut shell / 
+
+Reviews / Add Review</div>
+        <h1>Artisan Marketplace</h1>
+    </div>
+
+    <div class="add-review-container">
+        <div class="rating-container">
+            <label for="rating">Rate as stars:</label>
+            <!-- Assuming the user can give a rating from 1 to 5 -->
+            <select id="rating" name="rating">
+                <option value="1">1 star</option>
+                <option value="2">2 stars</option>
+                <option value="3">3 stars</option>
+                <option value="4">4 stars</option>
+                <option value="5">5 stars</option>
+            </select>
+        </div>
+
+        <input type="text" class="name-input" placeholder="Your Name" id="name">
+        <textarea class="comment-input" placeholder="Your Comment" 
+
+id="comment"></textarea>
+
+        <button class="submit-btn" onclick="submitReview()">Submit</button>
+    </div>
+
+    <script>
+        function submitReview() {
+            // Add logic for submitting the review
+            const rating = document.getElementById('rating').value;
+            const name = document.getElementById('name').value;
+            const comment = document.getElementById('comment').value;
+
+            // Add your logic to handle the submitted review data
+            alert(`Review submitted!\nRating: ${rating}\nName: ${name}\nComment: 
+
+${comment}`);
+        }
+    </script>
+</body>
+</html>

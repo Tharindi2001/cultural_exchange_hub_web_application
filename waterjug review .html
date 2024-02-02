@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Localhost Matching - Hand Made Water Jug Reviews</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+        }
+
+        .path {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .profile {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin: 20px;
+            border: 2px solid #333;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .details {
+            text-align: center;
+        }
+
+        .rating {
+            font-size: 24px;
+        }
+
+        .name {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .reviews-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .review-card {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            max-width: 300px;
+            text-align: center;
+        }
+
+        .add-review-btn {
+            padding: 15px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+         .svg-container {
+            width: 5vw;
+            height: 5vh;
+            position: absolute;
+            top: 35px;
+            left: 15px;
+            opacity: 1.0;
+            animation: pulse 1.5s ease-in-out infinite;
+            z-index: 5; /* Set a higher z-index to make sure it's on top */
+        }
+
+        .svg-container img {
+            width: 80%; /* Use 100% width to fill the container */
+            height: 80%; /* Use 100% height to fill the container */
+            display: block;
+            object-position: 100% 50%;
+            transform: translate(-50%, -50%) rotate(0deg);
+        }
+    </style>
+</head>
+<body>
+<!-- SVG container in the body -->
+    <div class="svg-container" onclick="window.location.href='waterjug.html'">
+        <img src="phootos\16de2cf5b18de6caa3c501441a8da300.svg" alt="previous 
+
+arrow icon" loading="lazy">
+    </div>
+    <div class="header">
+        <div class="path">Dashboard / Artisan Marketplace / Hand Made Water Jug/ 
+
+Reviews</div>
+        <h1>Artisan Marketplace</h1>
+    </div>
+    
+    <div class="profile">
+        <img src="phootos\waterjug.jpg" alt="coconut shell art">
+        <div class="details">
+            <div class="rating">****</div>
+             
+            <div class="name">Hand Made Water Jug</div>
+        </div>
+        
+        <div class="reviews-container">
+            <!-- Review Cards -->
+            <div class="review-card">
+                <img src="phootos\Natali.jpg" alt="natali">
+                <div class="rating">***** </div>
+                <p><b>Natali</b></p><br>
+                <p>"This item is so attractive"</p>
+            </div>
+
+            <div class="review-card">
+                <img src="phootos\Santhush.jpg" alt="santhush">
+                 <p><b>Santhush</b></p><br>
+                 <div class="rating">**** </div>
+                <p>"interesting...."</p>
+            </div>
+
+
+          <div class="review-card">
+                <img src="phootos\Jenny.jpg" alt="jenny">
+                 <p><b>Jenny</b></p><br>
+                 <div class="rating">**** </div>
+                <p>"Nice Product"</p>
+            </div>
+          </div>
+           
+        <button class="add-review-btn" onclick="window.location.href='waterjug add review.html'">Add Your Review
+
++</button>
+    </div>
+
+    <script>
+        function addReview() {
+            // Add logic for adding a review
+            alert("You clicked 'Add Your Review+' button. Add your review logic here!");
+        }
+    </script>
+</body>
+</html>

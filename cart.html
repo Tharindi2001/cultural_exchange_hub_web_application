@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <style>
+        .header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        .cart-item {
+            border: 1px solid #000;
+            margin: 10px;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .item-image {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+        .item-info {
+            display: flex;
+            justify-content: space-between;
+            flex-grow: 1; /* Allow item info to take remaining space */
+        }
+        .path {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 30px;
+        }
+
+        .svg-container {
+            width: 5vw;
+            height: 5vh;
+            position: absolute;
+            top: 25px;
+            left: 25px;
+            opacity: 1.0;
+            animation: pulse 1.5s ease-in-out infinite;
+            z-index: 5; /* Set a higher z-index to make sure it's on top */
+        }
+
+        .svg-container img {
+            width: 80%; /* Use 100% width to fill the container */
+            height: 80%; /* Use 100% height to fill the container */
+            display: block;
+            object-position: 100% 50%;
+            transform: translate(-50%, -50%) rotate(0deg);
+        }
+        #total-price {
+            margin-top: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- SVG container in the body -->
+    <div class="svg-container" onclick="window.location.href='artisan marketplace Main page.html'">
+        <img src="phootos\16de2cf5b18de6caa3c501441a8da300.svg" alt="previous arrow icon" loading="lazy">
+    </div>
+    
+    <div class="header">
+        <div class="path">Artisan Marketplace /Shopping Cart</div>
+        <h1>Shopping Cart</h1>
+    </div>
+
+    <div id="cart">
+        <!-- Cart items will be added here -->
+    </div>
+
+    <div id="total-price"></div>
+
+    <script>
+   
+
+// Function to add item to cart
+var cart = [
+    { id: 1, name: 'Art of Coconut Shell', price: 10.00, quantity: 1, image: 'phootos/art.jpg' },
+    { id: 2, name: 'Coconut Shell Art', price: 20.00, quantity: 1, image: 'phootos/marsk.jpg' },
+    { id: 3, name: 'Handmade Water Jug from Coconut Shell', price: 30.00, quantity: 1, image: 'phootos/waterjug.jpg' }
+];
+
+// Function to display cart items
+function displayCart() {
+    var cartDiv = document.getElementById('cart');
+    var totalPriceDiv = document.getElementById('total-price');
+    var totalPrice = 0;
+
+    // Checkbox to select all items
+    var selectAllCheckbox = document.createElement('input');
+    selectAllCheckbox.type = 'checkbox';
+    selectAllCheckbox.addEventListener('change', function () {
+        var checkboxes = document.querySelectorAll('#cart input[type="checkbox"]');
+        checkboxes.forEach(function (checkbox) {
+            checkbox.checked = selectAllCheckbox.checked;
+        });
+        calculateTotal();
+    });
+    cartDiv.appendChild(selectAllCheckbox);
+    cartDiv.appendChild(document.createTextNode('Select All'));
+
+    cart.forEach(function(item) {
+        if (item.quantity > 0) {
+            var itemDiv = document.createElement('div');
+            itemDiv.className = 'cart-item';
+
+            var itemImage = document.createElement('img');
+            itemImage.src = item.image;
+            itemImage.className = 'item-image';
+
+            var itemInfo = document.createElement('div');
+            itemInfo.className = 'item-info';
+
+            var itemName = document.createElement('span');
+            itemName.textContent = item.name;
+
+            var itemPrice = document.createElement('span');
+            itemPrice.textContent = '$' + item.price.toFixed(2);
+
+            var itemQuantity = document.createElement('span');
+            itemQuantity.textContent = 'Quantity: ' + item.quantity;
+
+            // Checkbox to select the item
+            var checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.value = item.id;
+            checkbox.addEventListener('change', calculateTotal);
+
+            // Button to increase quantity
+            var increaseButton = document.createElement('button');
+            increaseButton.textContent = '+';
+            increaseButton.addEventListener('click', function () {
+                item.quantity++;
+                itemQuantity.textContent = 'Quantity: ' + item.quantity;
+                calculateTotal();
+            });
+
+            // Button to decrease quantity
+            var decreaseButton = document.createElement('button');
+            decreaseButton.textContent = '-';
+            decreaseButton.addEventListener('click', function () {
+                if (item.quantity > 1) {
+                    item.quantity--;
+                    itemQuantity.textContent = 'Quantity: ' + item.quantity;
+                    calculateTotal();
+                }
+            });
+
+            // Button to remove item
+            var removeButton = document.createElement('button');
+            removeButton.textContent = 'Remove';
+            removeButton.addEventListener('click', function () {
+                cart = cart.filter(function(cartItem) {
+                    return cartItem.id !== item.id;
+                });
+                itemDiv.remove();
+                calculateTotal();
+            });
+
+            itemInfo.appendChild(itemName);
+            itemInfo.appendChild(itemPrice);
+            itemInfo.appendChild(itemQuantity);
+            itemInfo.appendChild(increaseButton);
+            itemInfo.appendChild(decreaseButton);
+            itemInfo.appendChild(removeButton);
+
+            itemDiv.appendChild(checkbox);
+            itemDiv.appendChild(itemImage);
+            itemDiv.appendChild(itemInfo);
+
+            cartDiv.appendChild(itemDiv);
+
+            // Calculate total price
+            totalPrice += item.price * item.quantity;
+        }
+    });
+
+    totalPriceDiv.textContent = 'Total Price: $' + totalPrice.toFixed(2);
+}
+
+// Function to calculate total price
+function calculateTotal() {
+    var checkboxes = document.querySelectorAll('#cart input[type="checkbox"]:checked');
+    var totalPrice = 0;
+
+    checkboxes.forEach(function(checkbox) {
+        var itemId = parseInt(checkbox.value);
+        var item = cart.find(function(item) {
+            return item.id === itemId;
+        });
+
+        if (item) {
+            totalPrice += item.price * item.quantity;
+        }
+    });
+
+    var totalPriceDiv = document.getElementById('total-price');
+    totalPriceDiv.textContent = 'Total Price: $' + totalPrice.toFixed(2);
+}
+
+// Call the function to display the cart items
+
+
+    displayCart();
+
+
+    </script>
+</body>
+</html>

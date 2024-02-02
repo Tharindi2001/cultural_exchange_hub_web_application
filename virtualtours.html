@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-image: url("phootos\srilanaka.jpg");
+      background-size: cover;
+      margin: 0; /* Add this to remove default body margin */
+      padding-top: 50px; /* Add padding for the header */
+    }
+
+    /* Add styles for the header */
+    header {
+      background-color: black;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1;
+    }
+
+    /* Create a row of images with equal height and width */
+    .row {
+      display: flex;
+      margin: 60px 10px 10px; /* Adjust margin to create space below the header */
+    }
+
+    /* Create four equal columns that float next to each other */
+    .column {
+      flex: 10%;
+      max-width: 100%;
+      padding: 0 4px;
+    }
+
+    .column img {
+      margin-top: 2px;
+      vertical-align: middle;
+      width: 100%;
+    }
+
+    .caption {
+      color: white;
+      font-size: 16px;
+      background-color: black;
+      padding: 10px;
+      text-align: center;
+    }
+
+    /* Responsive layout - makes a two-column layout instead of four columns */
+    @media screen and (max-width: 800px) {
+      .column {
+        flex: 50%;
+        max-width: 50%;
+      }
+    }
+
+    /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 600px) {
+      .column {
+        flex: 100%;
+        max-width: 100%;
+      }
+    }
+    /* SVG styles */
+    .svg-container {
+            width: 5vw; /* 10% of the viewport width */
+            height: 5vh; /* 10% of the viewport height */
+            position: absolute;
+            top: 40px;
+            left: 50px;
+            opacity: 1.0;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        .svg-container img {
+            width: 50%;
+            height: 110%;
+            display: block;
+            object-fit: cover;
+            object-position: 50% 50%;
+            transform: translate(-50%, -50%) rotate(0deg);
+        }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+     <!-- SVG container in the body -->
+  <div class="svg-container"onclick="window.location.href='index.html'">
+    <img src="Dialogues.svg" alt="previous arrow icon" loading="lazy">
+</div>
+    <h1 > Virtual Cultural Tours</h1>
+  </header>
+
+  <!-- Create a row of images -->
+  <div class="row">
+    <!-- Create four columns -->
+    <div class="column">
+      <img src="phootos\kandy.jpg" alt="Kandy" onclick="window.location.href='https://en.wikipedia.org/wiki/Kandy';">
+      <div class="caption">KANDY<br>Kandy is a major city in Sri Lanka located in the Central Province. It was the last capital of the ancient kings' era of Sri Lanka.</div>
+    </div>
+    <div class="column">
+      <img src="phootos\anuradhapura.jpg" alt="Anuradhapura" onclick="window.location.href='https://en.wikipedia.org/wiki/Anuradhapura';">
+      <div class="caption">ANURADHAPURA<br>Anuradhapura is a major city in north central Sri Lanka. It is the capital city of North Central Province and one of the ancient capitals of Sri Lanka.</div>
+    </div>
+    <div class="column">
+      <img src="phootos\sripada.jpg" alt="Sri Pada" onclick="window.location.href='https://en.wikipedia.org/wiki/Adam%27s_Peak';">
+      <div class="caption">SRI PADA<br>Sri Pada, also known as Adam's Peak, is a 2,243 m (7,359 ft) tall conical mountain located in central Sri Lanka. It is considered a sacred place by many religions.</div>
+    </div>
+  </div>
+</body>
+</html>

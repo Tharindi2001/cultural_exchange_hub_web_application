@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        html, body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+        }
+
+        body {
+            /* Replace 'languagecov.png' with the path to your image */
+            background-image: url('phootos/languagecov.png');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            margin: 0;
+        }
+
+        .header {
+            text-align: left;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0); /* Adjust the last value for transparency */
+            padding-left: 100px; /* Adjust the left padding as needed */
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0); /* Adjust the last value for transparency */
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .button {
+            margin-top: 60px; /* Adjust the top margin as needed */
+            display: block;
+            background-color: rgba(117, 194, 114, 0.815);
+            color: black;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px; /* Adjust padding as needed */
+            width: 30%;
+        }
+
+        .button:hover {
+            background-color: #f2f2f2; /* Lighter color on hover */
+        }
+
+        /* SVG styles */
+        .svg-container {
+            width: 5vw; /* 10% of the viewport width */
+            height: 5vh; /* 10% of the viewport height */
+            position: absolute;
+            top: 70px;
+            left: 50px;
+            opacity: 1.0;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        .svg-container img {
+            width: 50%;
+            height: 110%;
+            display: block;
+            object-fit: cover;
+            object-position: 50% 50%;
+            transform: translate(-50%, -50%) rotate(0deg);
+        }
+    </style>
+</head>
+<body>
+    <!-- SVG container in the body -->
+    <div class="svg-container"onclick="window.location.href='index.html'">
+        <img src="6ca93de5fa0f7bebe5d5325a93f5a2ac.svg" alt="previous arrow icon" loading="lazy">
+    </div>
+
+    <div class="header">
+        <h1>LANGUAGE AND CULTURE <br>LEARNING</h1>
+    </div>
+
+    <div class="content">
+        <button type="button" class="button"onclick="window.location.href='Dialogues.html'">
+            <p style="text-align: center; color: black; font-size: 36px; font-family: LibreBodoni; font-weight: 700; letter-spacing: 0.64px; word-wrap: break-word;">Dialogues</p>
+        </button>
+
+        <button type="button" class="button"onclick="window.location.href='Words.html'">
+            <p style="text-align: center; color: black; font-size: 36px; font-family: LibreBodoni; font-weight: 700; letter-spacing: 0.64px; word-wrap: break-word;">Words</p>
+        </button>
+    </div>
+</body>
+</html>

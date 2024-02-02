@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>December  - Events</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #3ea3aa;
+            text-align: center;
+        }
+        .day {
+            background-color: rgba(0, 122, 91, 0.479);
+            border: 1px solid #dddddd;
+            border-radius: 5px;
+            padding: 5px;
+            margin: 5px;
+        }
+         /* SVG styles */
+         .svg-container {
+            width: 5vw; /* 10% of the viewport width */
+            height: 5vh; /* 10% of the viewport height */
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            opacity: 1.0;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        .svg-container img {
+            width: 50%;
+            height: 110%;
+            display: block;
+            object-fit: cover;
+            object-position: 50% 50%;
+            transform: translate(-50%, -50%) rotate(0deg);
+        }
+    </style>
+</head>
+<body>
+    <!-- SVG container in the body -->
+    <div class="svg-container"onclick="window.location.href='culturaleventcal.html'">
+        <img src="6ca93de5fa0f7bebe5d5325a93f5a2ac.svg" alt="previous arrow icon" loading="lazy">
+    </div>
+
+    <h1>December  Events</h1>
+    <div id="days-container"></div>
+
+    <script>
+        // Sample events for January
+        var events = [
+            { day: 1, event: "New Year's Day" },
+            { day: 15, event: "Martin Luther King Jr. Day" },
+            // Add more events as needed
+        ];
+
+        // Function to create a day element with events
+        function createDayElement(day, events) {
+            var dayElement = document.createElement("div");
+            dayElement.className = "day";
+            dayElement.innerHTML = "<strong>Day " + day + "</strong><br>";
+
+            if (events.length > 0) {
+                dayElement.innerHTML += "Events:<br>";
+                events.forEach(function (event) {
+                    dayElement.innerHTML += "- " + event.event + "<br>";
+                });
+            } else {
+                dayElement.innerHTML += "No events for this day.";
+            }
+
+            return dayElement;
+        }
+
+        // Function to populate the days container
+        function populateDaysContainer() {
+            var daysContainer = document.getElementById("days-container");
+
+            for (var i = 1; i <= 31; i++) {
+                // Filter events for the current day
+                var dayEvents = events.filter(function (event) {
+                    return event.day === i;
+                });
+
+                // Create a day element
+                var dayElement = createDayElement(i, dayEvents);
+
+                // Append the day element to the container
+                daysContainer.appendChild(dayElement);
+            }
+        }
+
+        // Call the function to populate the days container
+        populateDaysContainer();
+    </script>
+</body>
+</html>

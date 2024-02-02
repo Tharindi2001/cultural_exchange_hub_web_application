@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOCALHOST MATCHING</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+        }
+
+        .path {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .profile {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin: 20px;
+            border: 2px solid #333; /* Added border */
+            padding: 20px; /* Added padding */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Added box shadow */
+        }
+
+        img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .details {
+            text-align: center;
+        }
+
+        .rating {
+            font-size: 24px;
+        }
+
+        .name {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .phone,
+        .email,
+        .contact-info {
+            margin: 5px 0;
+        }
+
+        .cultural-experiences {
+            margin-top: 20px;
+        }
+
+        .cultural-heading {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .cultural-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        button {
+            padding: 5px 10px;
+            margin: 5px;
+        }
+
+        .request-btn,
+        .review-btn {
+            padding: 10px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .review-btn {
+            background-color: #3498db;
+        }
+
+        .svg-container {
+            width: 5vw;
+            height: 5vh;
+            position: absolute;
+            top: 35px;
+            left: 15px;
+            opacity: 1.0;
+            animation: pulse 1.5s ease-in-out infinite;
+            z-index: 5; /* Set a higher z-index to make sure it's on top */
+        }
+
+        .svg-container img {
+            width: 80%; /* Use 100% width to fill the container */
+            height: 80%; /* Use 100% height to fill the container */
+            display: block;
+            object-position: 100% 50%;
+            transform: translate(-50%, -50%) rotate(0deg);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- SVG container in the body -->
+    <div class="svg-container" onclick="window.location.href='LOCAL HOST MATCHING.html'">
+        <img src="phootos\16de2cf5b18de6caa3c501441a8da300.svg" alt="previous arrow icon" loading="lazy">
+    </div>
+    <div class="header">
+        <div class="path">Dashboard / Localhost Matching /Sameera Subasinghe</div>
+        
+        <h1>LOCALHOST MATCHING</h1>
+    </div>
+    <div class="profile">
+        <img src="phootos\Sameera.jpg" alt="Sameera Subasinghe">
+        <div class="details">
+            <div class="rating">*****</div>
+            <div class="name">Sameera Subasinghe</div>
+            <div class="phone">Telephone Number: 0703425123</div>
+            <div class="email">Email Address: SameeraSubasinghe7215@gmail.com</div>
+            <div class="contact-info">Contact me for more details about payments.</div>
+            <div class="cultural-experiences">
+                <div class="cultural-heading">List Of Cultural Experiences</div>
+                <div class="cultural-buttons">
+                    <button>Deepawali festival</button>
+                    <button>Sigiriya Adventure</button>
+                    <button>Vesak Zone</button>
+                </div>
+            </div>
+            <div class="actions">
+                <button class="request-btn" onclick="sendRequest()">Send a Request</button>
+                <button class="review-btn" onclick="window.location.href='Sameera review.html'">Review</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function sendRequest() {
+            // Add logic for sending a request
+            alert("Request sent!");
+        }
+
+        
+
+        function goBack() {
+            // Add logic for going back
+            alert("Going back!");
+        }
+    </script>
+</body>
+
+</html>

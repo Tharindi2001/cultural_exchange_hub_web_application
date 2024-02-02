@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        html, body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+        }
+
+        body {
+            /* Replace 'languagecov.png' with the path to your image */
+            background-image: url('phootos/Words.png');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            margin: 0;
+        }
+
+
+        /* SVG styles */
+        .svg-container {
+            width: 5vw; /* 10% of the viewport width */
+            height: 5vh; /* 10% of the viewport height */
+            position: absolute;
+            top: 40px;
+            left: 50px;
+            opacity: 1.0;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        .svg-container img {
+            width: 50%;
+            height: 110%;
+            display: block;
+            object-fit: cover;
+            object-position: 50% 50%;
+            transform: translate(-50%, -50%) rotate(0deg);
+        }
+    </style>
+</head>
+<body>
+    <!-- SVG container in the body -->
+    <div class="svg-container"onclick="window.location.href='Language and Cultural Learning.html'">
+        <img src="Dialogues.svg" alt="previous arrow icon" loading="lazy">
+    </div>
+
+
+    
+</body>
+</html>
